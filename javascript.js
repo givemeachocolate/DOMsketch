@@ -6,6 +6,9 @@ const container = document.querySelector("#container")
 // container.appendChild(div)
 // }
 
+let a = []
+let b = []
+
 for(j=0; j<4; j++) {
     window["divColumn" + j] = document.createElement("div")
     window["divColumn" + j].setAttribute("id", `divColumn${j}`)
@@ -17,12 +20,25 @@ for(j=0; j<4; j++) {
         window["divSub" + j + i].setAttribute("id", `divSub${j}${i}`)
         window["divColumn" + j].appendChild(window["divSub" + j + i])
         window["divsubPosition" + j + i] = document.getElementById(`divSub${j}${i}`)
+        // a.push("divsubPosition" + `${i}${j}`)
+        a.push(window["divsubPosition" + j + i])
+        // b.push("divSub" + `${i}${j}`)
+        b.push(window["divSub" + j + i])
         }
 }
 // divsubPosition00.addEventListener("mouseenter", () => {document.divSub00.style.backgroundColor = "red"})
 
-divsubPosition00.addEventListener("mouseenter", () => {divSub00.setAttribute("class", "divMouseEnter")})
-divsubPosition00.addEventListener("mouseleave", () => {divSub00.setAttribute("class", "")})
+// divsubPosition00.addEventListener("mouseenter", () => {divSub00.setAttribute("class", "divMouseEnter")})
+// divsubPosition00.addEventListener("mouseleave", () => {divSub00.setAttribute("class", "")})
+
+for (i=0; i<a.length; i++) {
+    let c = a[i] 
+    let d = b[i]
+    // a[i].addEventListener("mouseenter", () => {b[i].setAttribute("class", "divMouseEnter")})
+    c.addEventListener("mouseenter", () => {d.setAttribute("class", "divMouseEnter")})
+    // a[i].addEventListener("mouseleave", () => {b[i].setAttribute("class", "")})
+    c.addEventListener("mouseleave", () => {d.setAttribute("class", "")})
+}
 
 
 // window["divSub" + j + i].setAttribute("class", "divMouseEnter")
