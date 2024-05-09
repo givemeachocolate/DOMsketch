@@ -1,4 +1,47 @@
 const container = document.querySelector("#container")
+const body = document.querySelector("body")
+const btn = document.createElement("button")
+btn.textContent = "RESET"
+body.insertBefore(btn, container)
+g = "500px"
+container.style.width = g
+container.style.height = g
+
+
+btn.addEventListener("click", () => {
+    let e = prompt("how many grid do you want?")
+    for (k=0; k<f; k++) {
+        window["divcol" + k] = document.getElementById(`divColumn${k}`)
+        container.removeChild(window["divcol" + k])
+    }
+    f = e
+    // body.removeChild(container)
+    // const containerNew = document.createElement("div")
+    // containerNew.setAttribute("id", container)
+    // const container = document.getElementById(container)
+    for (j=0; j<e; j++) {
+        window["divColumn" + j] = document.createElement("div")
+        window["divColumn" + j].setAttribute("id", `divColumn${j}`)
+        container.appendChild(window["divColumn" + j])
+        window["divColumnPosition" + j] = document.getElementById(`divColumn${j}`)
+        for (i=0; i<e; i++) {
+            window["divSub" + j + i] = document.createElement("div")
+            window["divSub" + j + i].style.width = "100px"
+            window["divSub" + j + i].style.height = "100px"
+            window["divSub" + j + i].setAttribute("id", `divSub${j}${i}`)
+            window["divColumn" + j].appendChild(window["divSub" + j + i])
+            window["divsubPosition" + j + i] = document.getElementById(`divSub${j}${i}`)
+            a.push(window["divsubPosition" + j + i])
+            b.push(window["divSub" + j + i])
+            }
+    }
+    for (i=0; i<a.length; i++) {
+        let c = a[i] 
+        let d = b[i]
+        c.addEventListener("mouseenter", () => {d.setAttribute("class", "divMouseEnter")})
+        c.addEventListener("mouseleave", () => {d.setAttribute("class", "")})
+    }
+})
 
 // for (i=0; i<16; i++) {
 // const div = document.createElement("div")
@@ -8,21 +51,24 @@ const container = document.querySelector("#container")
 
 let a = []
 let b = []
+let f = 4
 
-for(j=0; j<4; j++) {
+for (j=0; j<f; j++) {
     window["divColumn" + j] = document.createElement("div")
     window["divColumn" + j].setAttribute("id", `divColumn${j}`)
     container.appendChild(window["divColumn" + j])
     window["divColumnPosition" + j] = document.getElementById(`divColumn${j}`)
-    for (i=0; i<4; i++) {
+    for (i=0; i<f; i++) {
         window["divSub" + j + i] = document.createElement("div")
-        window["divSub" + j + i].textContent = "0"
+        // window["divSub" + j + i].textContent = "0"
+        window["divSub" + j + i].style.width = "100px"
+        window["divSub" + j + i].style.height = "100px"
         window["divSub" + j + i].setAttribute("id", `divSub${j}${i}`)
         window["divColumn" + j].appendChild(window["divSub" + j + i])
         window["divsubPosition" + j + i] = document.getElementById(`divSub${j}${i}`)
         // a.push("divsubPosition" + `${i}${j}`)
-        a.push(window["divsubPosition" + j + i])
         // b.push("divSub" + `${i}${j}`)
+        a.push(window["divsubPosition" + j + i])
         b.push(window["divSub" + j + i])
         }
 }
@@ -35,9 +81,10 @@ for (i=0; i<a.length; i++) {
     let c = a[i] 
     let d = b[i]
     // a[i].addEventListener("mouseenter", () => {b[i].setAttribute("class", "divMouseEnter")})
-    c.addEventListener("mouseenter", () => {d.setAttribute("class", "divMouseEnter")})
     // a[i].addEventListener("mouseleave", () => {b[i].setAttribute("class", "")})
+    c.addEventListener("mouseenter", () => {d.setAttribute("class", "divMouseEnter")})
     c.addEventListener("mouseleave", () => {d.setAttribute("class", "")})
+    // d.style.width = "100px"
 }
 
 
