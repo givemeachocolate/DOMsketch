@@ -22,13 +22,15 @@ btn.addEventListener("click", () => {
     for (j=0; j<e; j++) {
         window["divColumn" + j] = document.createElement("div")
         window["divColumn" + j].setAttribute("id", `divColumn${j}`)
+        window["divColumn" + j].setAttribute("class", "divColumn")
         container.appendChild(window["divColumn" + j])
         window["divColumnPosition" + j] = document.getElementById(`divColumn${j}`)
         for (i=0; i<e; i++) {
             window["divSub" + j + i] = document.createElement("div")
-            window["divSub" + j + i].style.width = "100px"
-            window["divSub" + j + i].style.height = "100px"
+            // window["divSub" + j + i].style.width = "100px"
+            // window["divSub" + j + i].style.height = "100px"
             window["divSub" + j + i].setAttribute("id", `divSub${j}${i}`)
+            window["divSub" + j + i].setAttribute("class", "divSub")
             window["divColumn" + j].appendChild(window["divSub" + j + i])
             window["divsubPosition" + j + i] = document.getElementById(`divSub${j}${i}`)
             a.push(window["divsubPosition" + j + i])
@@ -39,7 +41,7 @@ btn.addEventListener("click", () => {
         let c = a[i] 
         let d = b[i]
         c.addEventListener("mouseenter", () => {d.setAttribute("class", "divMouseEnter")})
-        c.addEventListener("mouseleave", () => {d.setAttribute("class", "")})
+        c.addEventListener("mouseleave", () => {d.setAttribute("class", "divSub")})
     }
 })
 
@@ -56,14 +58,16 @@ let f = 4
 for (j=0; j<f; j++) {
     window["divColumn" + j] = document.createElement("div")
     window["divColumn" + j].setAttribute("id", `divColumn${j}`)
+    window["divColumn" + j].setAttribute("class", "divColumn")
     container.appendChild(window["divColumn" + j])
     window["divColumnPosition" + j] = document.getElementById(`divColumn${j}`)
     for (i=0; i<f; i++) {
         window["divSub" + j + i] = document.createElement("div")
         // window["divSub" + j + i].textContent = "0"
-        window["divSub" + j + i].style.width = "100px"
-        window["divSub" + j + i].style.height = "100px"
+        // window["divSub" + j + i].style.width = "100px"
+        // window["divSub" + j + i].style.height = "100px"
         window["divSub" + j + i].setAttribute("id", `divSub${j}${i}`)
+        window["divSub" + j + i].setAttribute("class", "divSub")
         window["divColumn" + j].appendChild(window["divSub" + j + i])
         window["divsubPosition" + j + i] = document.getElementById(`divSub${j}${i}`)
         // a.push("divsubPosition" + `${i}${j}`)
@@ -83,7 +87,7 @@ for (i=0; i<a.length; i++) {
     // a[i].addEventListener("mouseenter", () => {b[i].setAttribute("class", "divMouseEnter")})
     // a[i].addEventListener("mouseleave", () => {b[i].setAttribute("class", "")})
     c.addEventListener("mouseenter", () => {d.setAttribute("class", "divMouseEnter")})
-    c.addEventListener("mouseleave", () => {d.setAttribute("class", "")})
+    c.addEventListener("mouseleave", () => {d.setAttribute("class", "divSub")})
     // d.style.width = "100px"
 }
 

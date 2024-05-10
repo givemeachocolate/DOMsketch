@@ -1,8 +1,26 @@
 #container {
     display: flex;  
-    flex: 0 0 1
 }
 
 .divMouseEnter {
     background-color: black;
+    display: flex;
+    flex: 1
+}
+
+/* div {
+    display: flex;
+    flex-direction: column;
+    flex: auto
+} */
+
+.divColumn {
+    display: flex;
+    flex-direction: column;
+    flex: 1
+}
+
+.divSub {
+    display: flex;
+    flex: 1
 }
